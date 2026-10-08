@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title if title is defined else "SDFC Bank" }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+</head>
+<body>
+<header class="bank-header">
+    <div class="brand">
+        <div class="logo-mark">SDFC</div>
+        <div>
+            <h1>SDFC BANK</h1>
+            <p>EXTRAORDINARY SERVICES</p>
+        </div>
+    </div>
+</header>
+<nav class="navbar">
+    <a href="/">Home</a>
+    <a href="/new-account">New Account</a>
+    <a href="/balance">Balance</a>
+    <a href="/deposit">Deposit</a>
+    <a href="/withdraw">Withdraw</a>
+    <a href="/transfer">Transfer</a>
+    <a href="/close-account">Close A/C</a>
+    <a href="/transactions">Transactions</a>
+</nav>
+<main class="layout">
+    <aside class="services">
+        <h2>SERVICES</h2>
+        <ul>
+            <li>WhatsApp Banking</li>
+            <li>Doorstep Banking</li>
+            <li>UPI Autopay</li>
+            <li>Mobile Banking</li>
+            <li>Online Banking</li>
+            <li>Remote Banking</li>
+            <li>Branch Banking</li>
+            <li>NetBanking</li>
+            <li>Phone Banking</li>
+        </ul>
+    </aside>
+    <section class="main-content">
+        {% if message %}
+        <div class="alert {{ message_type }}">{{ message }}</div>
+        {% endif %}
+        {% block content %}{% endblock %}
+    </section>
+    <aside class="welcome">
+        <h2>WELCOME...</h2>
+        <div class="people">♙ ♙ ♙ ♙</div>
+        <p>Say hello to a unique banking experience that meets all your requirements and guarantees personalised service.</p>
+        <p>We offer a range of account types, deposits and services designed for you.</p>
+    </aside>
+</main>
+<footer>© SDFC Bank — Banking Application Project</footer>
+</body>
+</html>

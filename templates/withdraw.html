@@ -1,0 +1,9 @@
+{% extends "form_base.html" %}
+{% set form_title = "WITHDRAW FORM" %}
+{% set action = "/withdraw" %}
+{% block fields %}
+<label>Account No:<input type="text" name="account_number" required></label>
+<label>Name:<input type="text" name="name" required></label>
+<label>Password:<input type="password" name="password" required></label>
+<label>Amount:<input type="number" name="amount" min="0.01" step="0.01" required></label>
+{% endblock %}

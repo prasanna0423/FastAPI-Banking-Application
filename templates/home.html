@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="welcome-card">
+    <h2>Welcome to SDFC Bank</h2>
+    <p>Choose a service from the menu to create an account, view your balance, deposit or withdraw money, transfer funds, or close an account.</p>
+</div>
+<div class="cards">
+    <a class="service-card" href="/new-account"><h3>New Account</h3><p>Create a bank account</p></a>
+    <a class="service-card" href="/balance"><h3>Checking Account</h3><p>Check your available balance</p></a>
+    <a class="service-card" href="/deposit"><h3>Savings Account</h3><p>Deposit money into your account</p></a>
+</div>
+{% endblock %}

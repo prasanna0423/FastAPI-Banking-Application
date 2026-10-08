@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="result-panel">
+    <h2>{{ title or "Request Completed" }}</h2>
+    <p>{{ message }}</p>
+    {% if account %}
+    <div class="balance-box">
+        <p><strong>Account Number:</strong> {{ account.account_number }}</p>
+        <p><strong>Name:</strong> {{ account.name }}</p>
+        <p><strong>Current Balance:</strong> ₹{{ account.balance|money }}</p>
+    </div>
+    {% endif %}
+    <a class="button-link" href="/">Back to Home</a>
+</div>
+{% endblock %}

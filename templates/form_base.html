@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="form-panel">
+    <h2>{{ form_title }}</h2>
+    <form method="post" action="{{ action }}">
+        {% block fields %}{% endblock %}
+        <div class="buttons">
+            <button type="submit">Submit</button>
+            <button type="reset" class="secondary">Clear</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

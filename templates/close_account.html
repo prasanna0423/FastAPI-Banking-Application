@@ -1,0 +1,9 @@
+{% extends "form_base.html" %}
+{% set form_title = "CLOSE ACCOUNT" %}
+{% set action = "/close-account" %}
+{% block fields %}
+<label>Account No:<input type="text" name="account_number" required></label>
+<label>Name:<input type="text" name="name" required></label>
+<label>Password:<input type="password" name="password" required></label>
+<p class="hint">For this project, the account must have a zero balance before it can be closed.</p>
+{% endblock %}

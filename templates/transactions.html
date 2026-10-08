@@ -1,0 +1,29 @@
+{% extends "form_base.html" %}
+{% set form_title = "TRANSACTION HISTORY" %}
+{% set action = "/transactions" %}
+{% block fields %}
+<label>Account No:<input type="text" name="account_number" required></label>
+<label>Name:<input type="text" name="name" required></label>
+<label>Password:<input type="password" name="password" required></label>
+{% endblock %}
+{% block content %}
+<div class="form-panel">
+    <h2>TRANSACTION HISTORY</h2>
+    {% if not history %}
+    <form method="post" action="/transactions">
+        <label>Account No:<input type="text" name="account_number" required></label>
+        <label>Name:<input type="text" name="name" required></label>
+        <label>Password:<input type="password" name="password" required></label>
+        <div class="buttons"><button type="submit">Submit</button><button type="reset" class="secondary">Clear</button></div>
+    </form>
+    {% else %}
+    <p><strong>Account:</strong> {{ account.account_number }} &nbsp; <strong>Balance:</strong> ₹{{ account.balance|money }}</p>
+    <div class="table-wrap"><table>
+        <thead><tr><th>Type</th><th>Amount</th><th>Description</th><th>Date</th></tr></thead>
+        <tbody>{% for item in history %}
+        <tr><td>{{ item.transaction_type }}</td><td>₹{{ item.amount|money }}</td><td>{{ item.description or "-" }}</td><td>{{ item.created_at or "-" }}</td></tr>
+        {% endfor %}</tbody>
+    </table></div>
+    {% endif %}
+</div>
+{% endblock %}

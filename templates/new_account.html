@@ -1,0 +1,12 @@
+{% extends "form_base.html" %}
+{% set form_title = "OPEN ACCOUNT FORM" %}
+{% set action = "/new-account" %}
+{% block fields %}
+<label>Account Number:<input type="text" name="account_number" required maxlength="30"></label>
+<label>Name:<input type="text" name="name" required maxlength="100"></label>
+<label>Password:<input type="password" name="password" required></label>
+<label>Confirm Password:<input type="password" name="confirm_password" required></label>
+<label>Amount:<input type="number" name="amount" min="0" step="0.01" value="0.00" required></label>
+<label>Address:<input type="text" name="address" required maxlength="250"></label>
+<label>Mobile No:<input type="tel" name="mobile_no" required maxlength="20"></label>
+{% endblock %}

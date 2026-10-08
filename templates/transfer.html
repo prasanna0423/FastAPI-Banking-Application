@@ -1,0 +1,10 @@
+{% extends "form_base.html" %}
+{% set form_title = "TRANSFER FORM" %}
+{% set action = "/transfer" %}
+{% block fields %}
+<label>Account No:<input type="text" name="account_number" required></label>
+<label>Name:<input type="text" name="name" required></label>
+<label>Password:<input type="password" name="password" required></label>
+<label>Target Account No:<input type="text" name="target_account" required></label>
+<label>Amount:<input type="number" name="amount" min="0.01" step="0.01" required></label>
+{% endblock %}
